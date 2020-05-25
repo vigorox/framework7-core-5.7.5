@@ -521,7 +521,11 @@ class Range extends Framework7Class {
       range.$el.trigger('range:changed', range.value);
       range.emit('local::changed rangeChanged', range, range.value);
     }
-    range.emit('local::change rangeChange', range, range.value);
+    // range.emit('local::change rangeChange', range, range.value);
+    // paulhsu: range:change event only be triggered by manually touching
+    if (byTouchMove) {
+      range.emit('local::change rangeChange', range, range.value);
+    }
     return range;
   }
 

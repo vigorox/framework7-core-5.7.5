@@ -118,7 +118,7 @@ export namespace Router {
     /** previous pages history will be cleared after reloading/navigate to the specified route */
     clearPreviousHistory?: boolean
     /** custom/extended context for Template7/Component page (when route loaded from template, templateUrl, component or componentUrl) */
-    context?: object
+    context?: any
     /** If set to `true` then it will ignore if such URL in cache and reload it using XHR again */
     ignoreCache?: boolean
     /** if set to `true` then it will ignore previous page in history and load specified one */
@@ -151,7 +151,7 @@ export namespace Router {
     /** object with matching route from available routes */
     route : RouteParameters
     /** context that was passed to the route */
-    context : object
+    context : any
   }
   interface Page {
     /** Initialized app instance */
@@ -183,7 +183,7 @@ export namespace Router {
     /** Page data of the page that was currently active before this new page. */
     pageFrom : Page
     /** Template7 context that was passed for this page when using Template7 pages */
-    context : object
+    context : any
   }
   interface Router extends Framework7EventsClass<Events> {
     /** Link to global app instance */
