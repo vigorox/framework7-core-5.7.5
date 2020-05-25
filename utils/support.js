@@ -3,7 +3,7 @@ import { window, document } from 'ssr-window';
 const Support = (function Support() {
   // paulhsu: force nw.js disable touch support
   try {
-    if (typeof require('nw.gui') !== 'undefined') {
+    if (typeof window.require('nw.gui') !== 'undefined') {
       return false;
     }
   } catch (ex) {
