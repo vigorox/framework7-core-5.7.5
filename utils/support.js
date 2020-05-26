@@ -1,15 +1,6 @@
 import { window, document } from 'ssr-window';
 
 const Support = (function Support() {
-  // paulhsu: force nw.js disable touch support
-  try {
-    if (typeof window.require('nw.gui') !== 'undefined') {
-      return false;
-    }
-  } catch (ex) {
-    console.log('not nw.js');
-  }
-
   return {
     touch: !!(('ontouchstart' in window) || (window.DocumentTouch && document instanceof window.DocumentTouch)),
 
